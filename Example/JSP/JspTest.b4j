@@ -1,0 +1,56 @@
+﻿AppType=StandardJava
+Build1=Default,b4j.example
+Group=Default Group
+Library1=jcore
+Library2=jserver
+Library3=jspsupport
+Module1=GuessMyNumber
+Module2=home
+Module3=ResetMyNumber
+Module4=WSGuessMyNumber
+NumberOfFiles=0
+NumberOfLibraries=3
+NumberOfModules=4
+Version=9.8
+@EndOfDesignText@
+#Region Project Attributes 
+	#CommandLineArgs:
+	#MergeLibraries: True 
+#End Region
+
+#AdditionalJar: apache-jsp-11.0.15.jar
+#AdditionalJar: tomcat-util-scan-10.0.27.jar
+#AdditionalJar: apache-jsp-10.1.7.jar
+#AdditionalJar: jakarta.servlet.jsp-api-3.1.1
+#AdditionalJar: jakarta.servlet-api-6.0.0.jar
+#AdditionalJar: jetty-util-11.0.9.jar
+
+Sub Process_Globals
+	Private srvr As Server
+End Sub
+
+Sub AppStart (Args() As String)
+	srvr.Initialize("srvr")
+	srvr.Port = 51042
+	srvr.StaticFilesFolder = File.Combine(File.DirApp, "www")
+	srvr.AddHandler("/guessmynumber/guess", "GuessMyNumber", False)
+	srvr.AddHandler("/guessmynumber/reset", "ResetMyNumber", False)
+	srvr.AddWebSocket("/guessmynumber_ws/ws", "WSGuessMyNumber")
+	
+	Dim testwithjsp As JSPSupport
+	
+	Dim webxml As String = File.Combine(File.DirApp, "www\webapp\WEB-INF\web.xml")
+	
+	Dim resource As String = File.Combine(File.DirApp &  "\www\webapp","")
+	
+	Dim check As Boolean = File.Exists(webxml,"")
+	Log(check)
+	testwithjsp.Initialize(webxml, resource, File.DirApp)
+	Dim hand As Object = testwithjsp.JettyParsing
+	srvr.AddHandler("/jsp", hand, False)
+	
+	srvr.Start
+	StartMessageLoop
+	'open browser and navigate to: http://127.0.0.1:51042/
+	'open browser and navigate to: http://127.0.0.1:51042/
+End Sub
