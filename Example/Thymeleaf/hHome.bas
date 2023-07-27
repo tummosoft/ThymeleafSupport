@@ -19,7 +19,7 @@ End Sub
 
 Sub Handle(req As ServletRequest, resp As ServletResponse)
 	Dim Thymeleaf As ThymeleafSupport
-	Dim ThymeleafTemplate As String = File.Combine(File.DirApp & "/www/templates","template1.htm")
+	Dim ThymeleafTemplate As String = File.Combine(File.DirApp & "/www/templates","")
 	Dim variable As Map
 	variable.Initialize
 	variable.Put("date", DateTime.Date(DateTime.Now))
@@ -33,6 +33,8 @@ Sub Handle(req As ServletRequest, resp As ServletResponse)
 	Thymeleaf.Cacheable = True
 	'1200000L // TTL=20m
 	Thymeleaf.CacheTTLMs = 1200000
+	Thymeleaf.Prefix = ThymeleafTemplate
+	Thymeleaf.Suffix = ".html"
 	Thymeleaf.Variables = variable
 	
 	Thymeleaf.setVariable("pagetitle","Hello world")
@@ -50,19 +52,16 @@ Sub Handle(req As ServletRequest, resp As ServletResponse)
 	map2.Put("is_caculator", True)
 	map2.Put("x1", x1)
 	map2.Put("x2", x2)
+		
 	
 	Thymeleaf.Variables = map2
 	
 	Dim arr() As String = Array As String ("Monday","Tuesday", "Wednesday", "Thursday", "Friday")
 	Thymeleaf.setVariable("myarrs", arr)
 	
-	Dim info As infoData
-	info.Initialize
-	info.Name = "DAVID"
-	info.Age = "25"
-	Thymeleaf.setVariable("authors", info)
+	Thymeleaf.setVariable("id", 15666666)
 	
-	Dim html As String = Thymeleaf.toHTML(ThymeleafTemplate)
+	Dim html As String = Thymeleaf.toHTML("/template1.html")
 		
 	'Log(html)
 	resp.CharacterEncoding = "UTF-8"

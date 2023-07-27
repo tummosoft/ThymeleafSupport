@@ -37,7 +37,7 @@ Sub AppStart (Args() As String)
 	srvr.AddHandler("/guessmynumber/reset", "ResetMyNumber", False)
 	srvr.AddWebSocket("/guessmynumber_ws/ws", "WSGuessMyNumber")
 	
-	Dim testwithjsp As JSPSupport
+	Dim testwithjsp As ThymeleafSupport
 	
 	Dim webxml As String = File.Combine(File.DirApp, "www\webapp\WEB-INF\web.xml")
 	

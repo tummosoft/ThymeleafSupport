@@ -4,15 +4,16 @@ Group=Default Group
 Library1=jcore
 Library2=jserver
 Library3=jsql
-Library4=jspsupport
+Library4=thymeleafsupport
 Module1=clsContent
 Module2=hHome
 Module3=infoData
 Module4=serOrganizations
-Module5=wsHome
+Module5=TestObjectClass
+Module6=wsHome
 NumberOfFiles=0
 NumberOfLibraries=4
-NumberOfModules=5
+NumberOfModules=6
 Version=9.8
 @EndOfDesignText@
 #Region Project Attributes 
@@ -26,7 +27,8 @@ Version=9.8
 #AdditionalJar: attoparser-2.0.6.RELEASE
 #AdditionalJar: unbescape-1.1.6.RELEASE
 #AdditionalJar: sqlite-jdbc-3.42.0.0
-
+#AdditionalJar: jsf-api-2.1
+#AdditionalJar: jboss-jsf-api_2.1_spec-2.1.29.1.Final
 Sub Process_Globals
 	Private srvr As Server
 End Sub
@@ -37,7 +39,8 @@ Sub AppStart (Args() As String)
 	srvr.StaticFilesFolder = File.Combine(File.DirApp, "www")
 	
 	srvr.AddHandler("/home/*", "hHome", False)
-	' http://127.0.0.1:51042/home/?search=b4j
+			
+	' http://127.0.0.1:51042/home/
 	srvr.Start
 	StartMessageLoop
 	'open browser and navigate to: http://127.0.0.1:51042/home

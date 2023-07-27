@@ -13,6 +13,6 @@ ModuleClosedNodes1=
 ModuleClosedNodes2=
 ModuleClosedNodes3=
 ModuleClosedNodes4=
-NavigationStack=WSGuessMyNumber,txtNumber_KeyUp,51,0,GuessMyNumber,Handle,10,0,Main,Process_Globals,11,0,Main,AppStart,33,6
+NavigationStack=WSGuessMyNumber,txtNumber_KeyUp,51,0,GuessMyNumber,Handle,10,0,Main,Process_Globals,14,0,Main,AppStart,24,6
 SelectedBuild=0
 VisibleModules=2
