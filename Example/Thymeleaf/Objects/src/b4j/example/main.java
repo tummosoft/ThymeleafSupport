@@ -67,9 +67,9 @@ _srvr.setStaticFilesFolder(anywheresoftware.b4a.keywords.Common.File.Combine(any
 RDebugUtils.currentLine=65541;
  //BA.debugLineNum = 65541;BA.debugLine="srvr.AddHandler(\"/home/*\", \"hHome\", False)";
 _srvr.AddHandler("/home/*","hHome",anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=65542;
- //BA.debugLineNum = 65542;BA.debugLine="srvr.AddFilter(\"/test\", \"filterObject\", False)";
-_srvr.AddFilter("/test","filterObject",anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=65543;
+ //BA.debugLineNum = 65543;BA.debugLine="srvr.AddFilter(\"/*\", \"TestObjectClass\", False)";
+_srvr.AddFilter("/*","TestObjectClass",anywheresoftware.b4a.keywords.Common.False);
 RDebugUtils.currentLine=65545;
  //BA.debugLineNum = 65545;BA.debugLine="srvr.Start";
 _srvr.Start();

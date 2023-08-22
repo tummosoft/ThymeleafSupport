@@ -64,3 +64,5 @@
 127.0.0.1 - - [27/Jul/2023:12:40:14 +0000] "GET /test HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183"
 127.0.0.1 - - [27/Jul/2023:12:40:14 +0000] "GET /testobject?status=ok HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183"
 127.0.0.1 - - [27/Jul/2023:12:41:23 +0000] "GET /test HTTP/1.1" 200 0 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183"
+127.0.0.1 - - [27/Jul/2023:13:58:44 +0000] "GET /home/ HTTP/1.1" 200 976 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183"
+127.0.0.1 - - [27/Jul/2023:13:58:44 +0000] "GET /templates/js/header.js HTTP/1.1" 304 0 "http://127.0.0.1:51042/home/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.183"

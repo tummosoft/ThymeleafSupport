@@ -25,9 +25,9 @@ main._srvr.runMethod(true,"setStaticFilesFolder",main.__c.getField(false,"File")
  BA.debugLineNum = 23;BA.debugLine="srvr.AddHandler(\"/home/*\", \"hHome\", False)";
 Debug.ShouldStop(4194304);
 main._srvr.runVoidMethod ("AddHandler",(Object)(BA.ObjectToString("/home/*")),(Object)(BA.ObjectToString("hHome")),(Object)(main.__c.getField(true,"False")));
- BA.debugLineNum = 24;BA.debugLine="srvr.AddFilter(\"/test\", \"filterObject\", False)";
-Debug.ShouldStop(8388608);
-main._srvr.runVoidMethod ("AddFilter",(Object)(BA.ObjectToString("/test")),(Object)(BA.ObjectToString("filterObject")),(Object)(main.__c.getField(true,"False")));
+ BA.debugLineNum = 25;BA.debugLine="srvr.AddFilter(\"/*\", \"TestObjectClass\", False)";
+Debug.ShouldStop(16777216);
+main._srvr.runVoidMethod ("AddFilter",(Object)(BA.ObjectToString("/*")),(Object)(BA.ObjectToString("TestObjectClass")),(Object)(main.__c.getField(true,"False")));
  BA.debugLineNum = 27;BA.debugLine="srvr.Start";
 Debug.ShouldStop(67108864);
 main._srvr.runVoidMethod ("Start");
@@ -59,7 +59,6 @@ infodata.myClass = BA.getDeviceClass ("b4j.example.infodata");
 wshome.myClass = BA.getDeviceClass ("b4j.example.wshome");
 clscontent.myClass = BA.getDeviceClass ("b4j.example.clscontent");
 testobjectclass.myClass = BA.getDeviceClass ("b4j.example.testobjectclass");
-filterobject.myClass = BA.getDeviceClass ("b4j.example.filterobject");
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);

@@ -37,9 +37,10 @@ Sub AppStart (Args() As String)
 	srvr.Initialize("srvr")
 	srvr.Port = 51042
 	srvr.StaticFilesFolder = File.Combine(File.DirApp, "www")
-	
+		
 	srvr.AddHandler("/home/*", "hHome", False)
 			
+	srvr.AddFilter("/*", "TestObjectClass", False)
 	' http://127.0.0.1:51042/home/
 	srvr.Start
 	StartMessageLoop

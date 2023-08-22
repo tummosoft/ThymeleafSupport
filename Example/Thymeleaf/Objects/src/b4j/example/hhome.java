@@ -30,6 +30,21 @@ public class hhome extends B4AClass.ImplB4AClass implements BA.SubDelegator{
     public Object callSub(String sub, Object sender, Object[] args) throws Exception {
         return BA.SubDelegator.SubNotFound;
     }
+public static class _animal{
+public boolean IsInitialized;
+public int id;
+public String name;
+public String action;
+public void Initialize() {
+IsInitialized = true;
+id = 0;
+name = "";
+action = "";
+}
+@Override
+		public String toString() {
+			return BA.TypeToString(this, false);
+		}}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public b4j.example.infodata _myuser = null;
 public b4j.example.clscontent _clsvalue = null;
@@ -39,6 +54,9 @@ __ref = this;
 RDebugUtils.currentModule="hhome";
 RDebugUtils.currentLine=327680;
  //BA.debugLineNum = 327680;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=327681;
+ //BA.debugLineNum = 327681;BA.debugLine="Type Animal(id As Int, name As String, action As";
+;
 RDebugUtils.currentLine=327682;
  //BA.debugLineNum = 327682;BA.debugLine="Dim myUser As infoData";
 _myuser = new b4j.example.infodata();
@@ -61,6 +79,8 @@ anywheresoftware.b4a.objects.collections.Map _map2 = null;
 int _x1 = 0;
 int _x2 = 0;
 String[] _arr = null;
+anywheresoftware.b4a.objects.collections.List _listanimals = null;
+b4j.example.hhome._animal _myanimal = null;
 String _html = "";
 RDebugUtils.currentLine=458752;
  //BA.debugLineNum = 458752;BA.debugLine="Sub Handle(req As ServletRequest, resp As ServletR";
@@ -161,16 +181,55 @@ RDebugUtils.currentLine=458794;
  //BA.debugLineNum = 458794;BA.debugLine="Thymeleaf.setVariable(\"id\", 15666666)";
 _thymeleaf.setVariable("id",(Object)(15666666));
 RDebugUtils.currentLine=458796;
- //BA.debugLineNum = 458796;BA.debugLine="Dim html As String = Thymeleaf.toHTML(\"/template1";
-_html = _thymeleaf.toHTML("/template1.html");
+ //BA.debugLineNum = 458796;BA.debugLine="Dim listAnimals As List";
+_listanimals = new anywheresoftware.b4a.objects.collections.List();
+RDebugUtils.currentLine=458797;
+ //BA.debugLineNum = 458797;BA.debugLine="listAnimals.Initialize";
+_listanimals.Initialize();
 RDebugUtils.currentLine=458799;
- //BA.debugLineNum = 458799;BA.debugLine="resp.CharacterEncoding = \"UTF-8\"";
-_resp.setCharacterEncoding("UTF-8");
+ //BA.debugLineNum = 458799;BA.debugLine="Dim myAnimal As Animal";
+_myanimal = new b4j.example.hhome._animal();
 RDebugUtils.currentLine=458800;
- //BA.debugLineNum = 458800;BA.debugLine="resp.Write(html)";
-_resp.Write(_html);
+ //BA.debugLineNum = 458800;BA.debugLine="myAnimal.Initialize";
+_myanimal.Initialize();
+RDebugUtils.currentLine=458801;
+ //BA.debugLineNum = 458801;BA.debugLine="myAnimal.id = 1";
+_myanimal.id /*int*/  = (int) (1);
 RDebugUtils.currentLine=458802;
- //BA.debugLineNum = 458802;BA.debugLine="End Sub";
+ //BA.debugLineNum = 458802;BA.debugLine="myAnimal.name = \"Dog\"";
+_myanimal.name /*String*/  = "Dog";
+RDebugUtils.currentLine=458803;
+ //BA.debugLineNum = 458803;BA.debugLine="myAnimal.action = \"Eat\"";
+_myanimal.action /*String*/  = "Eat";
+RDebugUtils.currentLine=458805;
+ //BA.debugLineNum = 458805;BA.debugLine="listAnimals.Add(myAnimal)";
+_listanimals.Add((Object)(_myanimal));
+RDebugUtils.currentLine=458807;
+ //BA.debugLineNum = 458807;BA.debugLine="myAnimal.id = 1";
+_myanimal.id /*int*/  = (int) (1);
+RDebugUtils.currentLine=458808;
+ //BA.debugLineNum = 458808;BA.debugLine="myAnimal.name = \"Cat\"";
+_myanimal.name /*String*/  = "Cat";
+RDebugUtils.currentLine=458809;
+ //BA.debugLineNum = 458809;BA.debugLine="myAnimal.action = \"Sleeping\"";
+_myanimal.action /*String*/  = "Sleeping";
+RDebugUtils.currentLine=458811;
+ //BA.debugLineNum = 458811;BA.debugLine="listAnimals.Add(myAnimal)";
+_listanimals.Add((Object)(_myanimal));
+RDebugUtils.currentLine=458813;
+ //BA.debugLineNum = 458813;BA.debugLine="Thymeleaf.setVariable(\"vietnamese\",myAnimal)";
+_thymeleaf.setVariable("vietnamese",(Object)(_myanimal));
+RDebugUtils.currentLine=458815;
+ //BA.debugLineNum = 458815;BA.debugLine="Dim html As String = Thymeleaf.toHTML(\"/template1";
+_html = _thymeleaf.toHTML("/template1.html");
+RDebugUtils.currentLine=458818;
+ //BA.debugLineNum = 458818;BA.debugLine="resp.CharacterEncoding = \"UTF-8\"";
+_resp.setCharacterEncoding("UTF-8");
+RDebugUtils.currentLine=458819;
+ //BA.debugLineNum = 458819;BA.debugLine="resp.Write(html)";
+_resp.Write(_html);
+RDebugUtils.currentLine=458821;
+ //BA.debugLineNum = 458821;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4j.example.hhome __ref,anywheresoftware.b4a.BA _ba) throws Exception{

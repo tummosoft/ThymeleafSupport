@@ -6,7 +6,7 @@ Version=9.8
 @EndOfDesignText@
 'Handler class
 Sub Class_Globals
-	
+	Type Animal(id As Int, name As String, action As String)
 	Dim myUser As infoData
 	Dim clsValue As clsContent
 End Sub
@@ -60,6 +60,25 @@ Sub Handle(req As ServletRequest, resp As ServletResponse)
 	Thymeleaf.setVariable("myarrs", arr)
 	
 	Thymeleaf.setVariable("id", 15666666)
+	
+	Dim listAnimals As List
+	listAnimals.Initialize
+	
+	Dim myAnimal As Animal
+	myAnimal.Initialize
+	myAnimal.id = 1
+	myAnimal.name = "Dog"
+	myAnimal.action = "Eat"
+	
+	listAnimals.Add(myAnimal)
+	
+	myAnimal.id = 1
+	myAnimal.name = "Cat"
+	myAnimal.action = "Sleeping"
+	
+	listAnimals.Add(myAnimal)
+	
+	Thymeleaf.setVariable("vietnamese",myAnimal)
 	
 	Dim html As String = Thymeleaf.toHTML("/template1.html")
 		

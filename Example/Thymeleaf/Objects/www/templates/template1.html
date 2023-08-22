@@ -27,6 +27,11 @@
 		<li  th:text="${myarr}"></li>
 	</ul>
 	
-	<div th:insert="~{\footer::copy}">&copy; 2011 The Static Templates</div>
+	' ---------------------------------------
+	<ul th:each="animal: ${animals}">
+		<li><span th:text="${animal.id}"></span> - <span th:text="${animal.name}"></span> - <span th:text="${animal.action}"></span></li>
+	</ul>
+	
+	<div th:insert="~{\footer::copy}"></div>
 </body>
 </html>

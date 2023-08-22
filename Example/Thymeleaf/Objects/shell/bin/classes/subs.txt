@@ -1,13 +1,12 @@
 b4j.example
 0
-7
+6
 serorganizations
 hhome
 infodata
 wshome
 clscontent
 testobjectclass
-filterobject
 0
 main,appstart,0,1,18,30
 ,srvr
@@ -65,7 +64,7 @@ hhome,class_globals,0,0,2,6
 
 
 
-hhome,handle,0,0,14,64
+hhome,handle,0,0,14,83
 
 
 infodata,user,infodata,roles
@@ -105,23 +104,11 @@ testobjectclass,class_globals,0,0,2,4
 
 
 
-testobjectclass,handle,0,0,10,27
+testobjectclass,handle,0,0,10,16
 
 
 
 testobjectclass,initialize,0,0,6,8
-
-
-
-filterobject,class_globals,0,0,2,4
-
-
-
-filterobject,filter,0,0,11,35
-
-
-infodata,initialize,infodata,setname,infodata,setage
-filterobject,initialize,0,0,6,8
 
 
 

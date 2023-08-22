@@ -19,6 +19,6 @@ ModuleClosedNodes3=
 ModuleClosedNodes4=
 ModuleClosedNodes5=
 ModuleClosedNodes6=
-NavigationStack=infoData,Initialize,9,0,hHome,Class_Globals,2,0,Main,Process_Globals,15,0,serOrganizations,Class_Globals,0,0,infoData,Class_Globals,0,0,hHome,Handle,55,6,clsContent,Class_Globals,0,0,TestObjectClass,Handle,10,0,Main,AppStart,23,6
+NavigationStack=infoData,Initialize,9,0,Main,Process_Globals,15,0,clsContent,Class_Globals,0,0,hHome,Class_Globals,2,0,TestObjectClass,Handle,14,6,infoData,Class_Globals,0,0,hHome,Handle,74,6,serOrganizations,Class_Globals,0,0,Main,AppStart,21,6
 SelectedBuild=0
 VisibleModules=4,2,3,6,1,5

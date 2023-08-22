@@ -15,48 +15,24 @@ public static RemoteObject  _handle(RemoteObject __ref,RemoteObject _req,RemoteO
 try {
 		Debug.PushSubsStack("Handle (testobjectclass) ","testobjectclass",6,__ref.getField(false, "ba"),__ref,10);
 if (RapidSub.canDelegate("handle")) { return __ref.runUserSub(false, "testobjectclass","handle", __ref, _req, _resp);}
-RemoteObject _thymeleaf = RemoteObject.declareNull("com.tummosoft.ThymeleafSupport");
-RemoteObject _thymeleaftemplate = RemoteObject.createImmutable("");
-RemoteObject _html = RemoteObject.createImmutable("");
 Debug.locals.put("req", _req);
 Debug.locals.put("resp", _resp);
  BA.debugLineNum = 10;BA.debugLine="Sub Handle(req As ServletRequest, resp As ServletR";
 Debug.ShouldStop(512);
- BA.debugLineNum = 11;BA.debugLine="Dim Thymeleaf As ThymeleafSupport";
-Debug.ShouldStop(1024);
-_thymeleaf = RemoteObject.createNew ("com.tummosoft.ThymeleafSupport");Debug.locals.put("Thymeleaf", _thymeleaf);
- BA.debugLineNum = 12;BA.debugLine="Dim ThymeleafTemplate As String = File.Combine(Fi";
+ BA.debugLineNum = 12;BA.debugLine="req.GetSession.SetAttribute(\"user\", \"phamanhtuan\"";
 Debug.ShouldStop(2048);
-_thymeleaftemplate = testobjectclass.__c.getField(false,"File").runMethod(true,"Combine",(Object)(RemoteObject.concat(testobjectclass.__c.getField(false,"File").runMethod(true,"getDirApp"),RemoteObject.createImmutable("/www/templates"))),(Object)(RemoteObject.createImmutable("")));Debug.locals.put("ThymeleafTemplate", _thymeleaftemplate);Debug.locals.put("ThymeleafTemplate", _thymeleaftemplate);
- BA.debugLineNum = 14;BA.debugLine="Thymeleaf.Initialize";
+_req.runMethod(false,"GetSession").runVoidMethod ("SetAttribute",(Object)(BA.ObjectToString("user")),(Object)((RemoteObject.createImmutable("phamanhtuan"))));
+ BA.debugLineNum = 13;BA.debugLine="req.GetSession.SetAttribute(\"pass\", \"12345678\")";
+Debug.ShouldStop(4096);
+_req.runMethod(false,"GetSession").runVoidMethod ("SetAttribute",(Object)(BA.ObjectToString("pass")),(Object)((RemoteObject.createImmutable("12345678"))));
+ BA.debugLineNum = 14;BA.debugLine="resp.SendRedirect(req.FullRequestURI)";
 Debug.ShouldStop(8192);
-_thymeleaf.runVoidMethod ("Initialize");
- BA.debugLineNum = 15;BA.debugLine="Thymeleaf.Encoding = \"UTF-8\"";
+_resp.runVoidMethod ("SendRedirect",(Object)(_req.runMethod(true,"getFullRequestURI")));
+ BA.debugLineNum = 15;BA.debugLine="Log(\"Redirect\")";
 Debug.ShouldStop(16384);
-_thymeleaf.runVoidMethod ("setEncoding",BA.ObjectToString("UTF-8"));
- BA.debugLineNum = 16;BA.debugLine="Thymeleaf.Cacheable = True";
+testobjectclass.__c.runVoidMethod ("LogImpl","51638405",RemoteObject.createImmutable("Redirect"),0);
+ BA.debugLineNum = 16;BA.debugLine="End Sub";
 Debug.ShouldStop(32768);
-_thymeleaf.runVoidMethod ("setCacheable",testobjectclass.__c.getField(true,"True"));
- BA.debugLineNum = 18;BA.debugLine="Thymeleaf.CacheTTLMs = 1200000";
-Debug.ShouldStop(131072);
-_thymeleaf.runVoidMethod ("setCacheTTLMs",BA.numberCast(long.class, 1200000));
- BA.debugLineNum = 19;BA.debugLine="Thymeleaf.Prefix = ThymeleafTemplate";
-Debug.ShouldStop(262144);
-_thymeleaf.runVoidMethod ("setPrefix",_thymeleaftemplate);
- BA.debugLineNum = 20;BA.debugLine="Thymeleaf.Suffix = \".html\"";
-Debug.ShouldStop(524288);
-_thymeleaf.runVoidMethod ("setSuffix",BA.ObjectToString(".html"));
- BA.debugLineNum = 22;BA.debugLine="Dim html As String = Thymeleaf.toHTML(\"/SessionOb";
-Debug.ShouldStop(2097152);
-_html = _thymeleaf.runMethod(true,"toHTML",(Object)(RemoteObject.createImmutable("/SessionObject.html")));Debug.locals.put("html", _html);Debug.locals.put("html", _html);
- BA.debugLineNum = 25;BA.debugLine="resp.CharacterEncoding = \"UTF-8\"";
-Debug.ShouldStop(16777216);
-_resp.runMethod(true,"setCharacterEncoding",BA.ObjectToString("UTF-8"));
- BA.debugLineNum = 26;BA.debugLine="resp.Write(html)";
-Debug.ShouldStop(33554432);
-_resp.runVoidMethod ("Write",(Object)(_html));
- BA.debugLineNum = 27;BA.debugLine="End Sub";
-Debug.ShouldStop(67108864);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
